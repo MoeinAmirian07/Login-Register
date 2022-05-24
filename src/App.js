@@ -5,9 +5,10 @@ import Register from "./Pages/Register";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
+  console.log("moein");
   return (
-    <Router>
-      <div>
+    <div>
+      <Router>
         <ul>
           <li>
             <Link to={"/"}>Home</Link>
@@ -19,15 +20,16 @@ const App = () => {
             <Link to={"/register"}>Register</Link>
           </li>
         </ul>
-
         <hr />
         <Switch>
-          <Route exact path="/" componet={<Home />} />
-          <Route path="/login" componet={<Login />}></Route>
-          <Route path="/register" componet={<Register />}></Route>
+          <Route exact path="/" componet={Home} />
+          <Route path="/login" componet={Login}>
+            <Login />
+          </Route>
+          <Route path="/register" componet={Register}></Route>
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Button } from "@shopify/polaris";
 import { Card } from "@shopify/polaris";
 
 const Login = () => {
@@ -38,9 +37,9 @@ const Login = () => {
                   <Field type="password" name="password" />
                   <ErrorMessage name="password" component="div" />
                 </label>
-                <Button type="submit" disabled={isSubmitting}>
+                <button type="submit" disabled={isSubmitting}>
                   Submit
-                </Button>
+                </button>
               </Form>
             </Card>
           );
