@@ -5,7 +5,6 @@ import Register from "./Pages/Register";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
-  console.log("moein");
   return (
     <div>
       <Router>
@@ -26,7 +25,9 @@ const App = () => {
           <Route path="/login" componet={Login}>
             <Login />
           </Route>
-          <Route path="/register" componet={Register}></Route>
+          <Route path="/register" componet={Register}>
+            <Register />
+          </Route>
         </Switch>
       </Router>
     </div>
