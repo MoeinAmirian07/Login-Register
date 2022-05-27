@@ -1,27 +1,20 @@
 import "./App.css";
-import Login from "./Pages/Login";
-import Home from "./Pages/Home";
-import Register from "./Pages/Register";
+import Login from "./Pages/Login/Login";
+import Home from "./Pages/HOme/Home";
+import Register from "./Pages/Register/Register";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Navbar from "./Componet/NavBar/NabBar";
+import "./App.css";
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <Router>
-        <ul>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link to={"/login"}>Login</Link>
-          </li>
-          <li>
-            <Link to={"/register"}>Register</Link>
-          </li>
-        </ul>
-        <hr />
+        <Navbar />
         <Switch>
-          <Route exact path="/" componet={Home} />
+          <Route exact path="/" componet={Home}>
+            <Home />
+          </Route>
           <Route path="/login" componet={Login}>
             <Login />
           </Route>
