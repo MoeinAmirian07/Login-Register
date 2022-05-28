@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import CountrySelector from "./CountrySelector";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { Validation } from "./Validation";
-import { Input } from "./Input";
+import { Input } from "../../Componet/Input";
 
 const Register = () => {
   const handleSubmit = (values) => {
