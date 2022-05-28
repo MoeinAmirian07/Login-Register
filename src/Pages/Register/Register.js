@@ -4,11 +4,12 @@ import CountrySelector from "./CountrySelector";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { Validation } from "./Validation";
 import { Input } from "../../Componet/Input/Input";
-import InitialValues from "./InitialValues"
+import InitialValues from "./InitialValues";
+import "./Register.css";;
 
 const Register = () => {
   const handleSubmit = (values) => {
-    console.log(values);
+    alert(JSON.stringify(values, null, 2));
   };
 
   return (
@@ -33,8 +34,7 @@ const Register = () => {
                       type="password"
                     />
                     <CountrySelector />
-                    <br></br>
-                    <div style={{ color: "rgb(197, 46, 104)" }}>
+                    <div className="submit-btn">
                       <Button monochrome outline submit>
                         Register
                       </Button>
