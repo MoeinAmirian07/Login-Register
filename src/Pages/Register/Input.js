@@ -5,9 +5,7 @@ export const Input = ({ name, label, ...props }) => {
   const [field, meta] = useField(name);
   return (
     <div>
-      <label style={{ color: "rgb(156, 37, 83)" }} htmlFor={field.name}>
-        {label}
-      </label>
+      <label htmlFor={field.name}>{label}</label>
       <TextField
         id={field.name}
         name={field.name}

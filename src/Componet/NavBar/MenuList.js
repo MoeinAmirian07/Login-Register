@@ -1,6 +1,6 @@
 export const MenuList = [
   {
-    title: "",
+    title: "Home",
     url: "/",
   },
   {

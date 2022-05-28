@@ -17,7 +17,7 @@ const CountrySelector = () => {
   ];
 
   return (
-    <div style={{ color: "rgb(156, 37, 83)" }}>
+    <div>
       <Select
         label="Country"
         options={options}

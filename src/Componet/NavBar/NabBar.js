@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MenuList } from "./MenuList";
-import "./NavBar.css";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-        Home<font>Page</font>
+        Moein<font>Test</font>
       </div>
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
