@@ -27,6 +27,7 @@ nav {
 }
 
 .logo {
+  padding-top: 10px;
   font-weight: 600;
   font-size: 25px;
   color: rgb(100, 17, 49);
@@ -113,4 +114,7 @@ nav {
     right: -100%;
     transition: all 0.5s ease-in-out;
   }
+}
+.navlink{
+  text-decoration: none;
 }

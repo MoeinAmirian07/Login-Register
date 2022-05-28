@@ -1,9 +1,9 @@
-import { Card, Layout, Page, Form, Button } from "@shopify/polaris";
+import { Card, Layout, Page, Button } from "@shopify/polaris";
 const Home = () => {
   return (
     <Page narrowWidth={true}>
       <Layout sectioned>
-        <Card title="You have to log in or register" sectioned>
+        <Card title="You have to log in or create an account" sectioned>
           <h1 style={{ fontSize: "16px", padding: "6px" }}>
             {" "}
             <strong>If you want to create an account click to Register</strong>

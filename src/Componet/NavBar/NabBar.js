@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { MenuList } from "./MenuList";
 import "./Navbar.css";
 
@@ -21,9 +21,12 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="logo">
-        Moein<font>Test</font>
-      </div>
+      <Link to="/" className="navlink">
+        <div className="logo">
+          Home <font>Test</font>
+        </div>
+      </Link>
+
       <div className="menu-icon" onClick={handleClick}>
         <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
