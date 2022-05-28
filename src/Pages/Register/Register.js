@@ -3,7 +3,8 @@ import { Formik, Form } from "formik";
 import CountrySelector from "./CountrySelector";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { Validation } from "./Validation";
-import { Input } from "../../Componet/Input";
+import { Input } from "../../Componet/Input/Input";
+import InitialValues from "./InitialValues"
 
 const Register = () => {
   const handleSubmit = (values) => {
@@ -16,12 +17,7 @@ const Register = () => {
         <Layout sectioned={true}>
           <Card sectioned>
             <Formik
-              initialValues={{
-                name: "",
-                email: "",
-                password: "",
-                confirmPassword: "",
-              }}
+              initialValues={InitialValues}
               onSubmit={handleSubmit}
               validationSchema={Validation}
             >

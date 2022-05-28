@@ -1,11 +1,16 @@
 import { object, string, ref } from "yup";
+import { InlineError } from "@shopify/polaris";
 export const Validation = object().shape({
-  name: string().required("Required"),
+  name: string().required(<InlineError message="Required" fieldId="name" />),
   email: string()
-    .required("Valid email required")
-    .email("Valid email required"),
-  password: string().min(8, "Required").required("Required"),
+    .required(
+      <InlineError message="Valid email required" fieldId="emailRequired" />
+    )
+    .email(<InlineError message="Valid email required" fieldId="email" />),
+  password: string()
+    .min(8, <InlineError message="Too short" fieldId="password" />)
+    .required(<InlineError message="Required" fieldId="passwordRequired" />),
   confirmPassword: string()
-    .required("Please confirm your password")
-    .oneOf([ref("password")], "Passwords do not match"),
+    .required(<InlineError message="Please confirm your password" fieldId="requiredConfirm" />)
+    .oneOf([ref("password")], <InlineError message="Passwords do not match" fieldId="notMatchPassword" />),
 });

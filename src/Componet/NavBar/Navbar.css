@@ -80,7 +80,7 @@ nav {
 
 @media screen and (max-width: 600px) {
   .menu-icon {
-    display: block;
+    display: inline;
   }
   .menu-list {
     flex-direction: column;
