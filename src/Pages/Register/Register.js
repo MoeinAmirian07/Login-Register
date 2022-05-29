@@ -7,15 +7,16 @@ import { Input } from "../../Componet/Input/Input";
 import InitialValues from "./InitialValues";
 import "./Register.css";
 
-let allValues;
-
+let country;
 const Register = () => {
   const handleSubmit = (values) => {
-    allValues = JSON.stringify(values, null, 8);
+    values.country = country;
+    alert(JSON.stringify(values, null, 2));
   };
-  const CountryHandler = (country) => {
-    allValues = { allValues, country };
+  const countryHandler = (selected) => {
+    country = selected;
   };
+
   return (
     <div>
       <Page title="Register Form" narrowWidth={true}>
@@ -37,7 +38,7 @@ const Register = () => {
                       label="Confirm Password"
                       type="password"
                     />
-                    <CountrySelector onGetContry={CountryHandler} />
+                    <CountrySelector onChangeHandler={countryHandler} />
                     <div className="submit-btn">
                       <Button monochrome outline submit>
                         Register
