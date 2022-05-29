@@ -8,7 +8,6 @@ import "./Login.css";
 
 const Register = () => {
   const handleSubmit = (values) => {
-    console.log(values);
     alert(JSON.stringify(values, null, 2));
   };
 

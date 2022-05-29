@@ -1,0 +1,13 @@
+.home {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 16px;
+  padding: 6px;
+}
+.button {
+  padding: 6px;
+  color: rgb(150, 29, 75);
+}
