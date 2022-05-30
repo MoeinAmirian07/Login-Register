@@ -12,25 +12,15 @@ nav {
   cursor: pointer;
 }
 
-.menu-icon {
-  display: none;
-  font-size: 20px;
-}
-.menu-icon .fa-times {
-  transform: rotate(360deg);
-  transition: all 0.2s ease-in-out;
-}
-
-.menu-icon .fa-bars {
-  transform: rotate(180deg);
-  transition: all 0.2s ease-in-out;
-}
-
 .logo {
-  padding-top: 10px;
   font-weight: 600;
   font-size: 25px;
   color: rgb(100, 17, 49);
+  transform: translateY(10%);
+  transition: transform 0.15s ease-in;
+}
+.logo:hover {
+  transform: translateY(0%);
 }
 
 .logo font {
@@ -44,14 +34,14 @@ nav {
   align-items: center;
 }
 
-.menu-list li:last-child a {
+/* .menu-list li:last-child a {
   font-weight: 300;
   padding: 5px 10px;
   background-color: rgb(100, 17, 49);
   transition: all 0.5s ease-in-out;
   margin-left: 20px;
   border-radius: 2px;
-}
+} */
 
 .menu-list li a {
   text-decoration: none;
@@ -61,12 +51,16 @@ nav {
   margin-left: 20px;
 }
 
-.menu-list li a:hover,
-.menu-list li a.active {
+.menu-list li a:hover {
   background-color: #fff;
-  border-radius: 2px;
   color: #000;
-  transition: all 0.5s ease-in-out;
+}
+.menu-list li a.active {
+  background-color: rgb(100, 17, 49);
+  border-radius: 2px;
+  color: #fff;
+  transition: all 0.25s ease-in-out;
+  transform: translateY(0%);
 }
 
 @media screen and (max-width: 800px) {
