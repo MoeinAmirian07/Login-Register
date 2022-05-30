@@ -2,7 +2,7 @@ import { Card, Layout, Page, Button } from "@shopify/polaris";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-const Home = () => {
+export const Home = () => {
   return (
     <div className="home">
       <Page narrowWidth={true}>
@@ -36,4 +36,3 @@ const Home = () => {
     </div>
   );
 };
-export default Home;

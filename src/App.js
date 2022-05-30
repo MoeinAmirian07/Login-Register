@@ -1,15 +1,15 @@
-import Login from "./Pages/Login/Login";
-import Home from "./Pages/Home/Home";
-import Register from "./Pages/Register/Register";
+import { Login } from "./Pages/Login/Login";
+import { Home } from "./Pages/Home/Home";
+import { Register } from "./Pages/Register/Register";
 import { BrowserRouter as Routes, Route } from "react-router-dom";
-import Navbar from "./Componet/NavBar/NabBar";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { Navbar } from "./Componet/NavBar/NabBar";
+import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from "@shopify/polaris";
 import en from "@shopify/polaris/locales/en.json";
 import "@shopify/polaris/build/esm/styles.css";
 import "./App.css";
 
-const App = () => {
+export const App = () => {
   return (
     <div className="container">
       <AppProvider i18n={en}>
@@ -31,5 +31,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

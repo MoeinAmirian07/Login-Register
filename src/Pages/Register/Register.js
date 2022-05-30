@@ -1,20 +1,16 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import CountrySelector from "./CountrySelector";
+import { CountrySelector } from "./CountrySelector";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { Validation } from "./Validation";
 import { Input } from "../../Componet/Input/Input";
-import InitialValues from "./InitialValues";
-import "./Register.css";
+import { InitialValues } from "./InitialValues";
 
-let country;
-const Register = () => {
+import "./Register.css";
+export const Register = () => {
   const handleSubmit = (values) => {
-    values.country = country;
     alert(JSON.stringify(values, null, 2));
-  };
-  const countryHandler = (selected) => {
-    country = selected;
+    values.country = "";
   };
 
   return (
@@ -38,7 +34,7 @@ const Register = () => {
                       label="Confirm Password"
                       type="password"
                     />
-                    <CountrySelector onChangeHandler={countryHandler} />
+                    <CountrySelector name="country" label="Country" />
                     <div className="submit-btn">
                       <Button monochrome outline submit>
                         Register
@@ -54,5 +50,3 @@ const Register = () => {
     </div>
   );
 };
-
-export default Register;

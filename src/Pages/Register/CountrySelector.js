@@ -1,30 +1,28 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import { Select } from "@shopify/polaris";
+import { useField } from "formik";
+import { Const } from "../../Const";
 
-const CountrySelector = ({ onChangeHandler }) => {
-  const [selected, setSelected] = useState("Iran");
-
-  const handleSelectChange = useCallback((value) => {
-    setSelected(value);
-  }, []);
-  onChangeHandler(selected);
-  const options = [
-    { label: "IRAN", value: "Iran" },
-    { label: "USA", value: "USA" },
-    { label: "IRAQ", value: "Iraq" },
-    { label: "GERMANY", value: "Germany" },
-  ];
+export const CountrySelector = ({ name, label, ...props }) => {
+  const [field, meta, helper] = useField(name);
+  const handleSelectChange = useCallback(
+    (value) => {
+      helper.setValue(value);
+    },
+    [helper]
+  );
 
   return (
-    <div>
+    <>
+      <label htmlFor={field.name}>{label}</label>
       <Select
-        label="Country"
-        options={options}
+        id={field.name}
+        name={field.name}
+        options={Const}
         onChange={handleSelectChange}
-        value={selected}
+        value={field.value}
+        {...props}
       />
-    </div>
+    </>
   );
 };
-
-export default CountrySelector;

@@ -1,28 +1,16 @@
 import { object, string, ref } from "yup";
-import { InlineError } from "@shopify/polaris";
 
 export const Validation = object().shape({
-  name: string().required(<InlineError message="Required" fieldId="name" />),
-  email: string()
-    .required(
-      <InlineError message="Valid email required" fieldId="emailRequired" />
-    )
-    .email(<InlineError message="Valid email required" fieldId="email" />),
+  name: string().required(),
+  email: string().required().email(),
   password: string()
-    .min(8, <InlineError message="Too short" fieldId="password" />)
-    .required(<InlineError message="Required" fieldId="passwordRequired" />),
-  confirmPassword: string()
-    .required(
-      <InlineError
-        message="Please confirm your password"
-        fieldId="requiredConfirm"
-      />
-    )
-    .oneOf(
-      [ref("password")],
-      <InlineError
-        message="Passwords does not match"
-        fieldId="notMatchPassword"
-      />
+    .min(8)
+    .required()
+    .matches(
+      /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+      "Password must contain at least 8 characters, one uppercase, one number and one special case character"
     ),
+  confirmPassword: string()
+    .required()
+    .oneOf([ref("password")], "your password dose not match"),
 });

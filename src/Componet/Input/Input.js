@@ -1,15 +1,16 @@
 import { useCallback } from "react";
 import { useField, ErrorMessage } from "formik";
-import { TextField } from "@shopify/polaris";
-
+import { InlineError, TextField } from "@shopify/polaris";
 
 export const Input = ({ name, label, ...props }) => {
   const [field, meta, helper] = useField(name);
 
-  const handleOnChange = useCallback((event) => {
-    helper.setValue(event);
-  },[helper])
-
+  const handleOnChange = useCallback(
+    (event) => {
+      helper.setValue(event);
+    },
+    [helper]
+  );
   return (
     <div>
       <label htmlFor={field.name}>{label}</label>
@@ -17,11 +18,13 @@ export const Input = ({ name, label, ...props }) => {
         id={field.name}
         name={field.name}
         value={field.value}
-        error={meta.touched && Boolean(meta.error)}
+        error={meta.error && meta.touched ? meta.error : null}
         onChange={handleOnChange}
         {...props}
       />
-      <ErrorMessage name={field.name} component="div" />
+      <InlineError>
+        <ErrorMessage name={field.name} component="div" />
+      </InlineError>
     </div>
   );
 };

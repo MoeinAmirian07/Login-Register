@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import { MenuList } from "./MenuList";
 import "./Navbar.css";
 
-const Navbar = () => {
+export const Navbar = () => {
   const [clicked, setClicked] = useState(false);
   const menuList = MenuList.map(({ url, title }, index) => {
     return (
@@ -34,5 +34,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

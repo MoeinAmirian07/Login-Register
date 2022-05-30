@@ -3,10 +3,10 @@ import { Formik, Form } from "formik";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { Validation } from "./Validation";
 import { Input } from "../../Componet/Input/Input";
-import InitialValues from "./InitialValues";
+import { InitialValues } from "./InitialValues";
 import "./Login.css";
 
-const Register = () => {
+export const Login = () => {
   const handleSubmit = (values) => {
     alert(JSON.stringify(values, null, 2));
   };
@@ -39,5 +39,3 @@ const Register = () => {
     </Page>
   );
 };
-
-export default Register;
