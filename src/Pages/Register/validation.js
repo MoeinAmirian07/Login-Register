@@ -1,6 +1,6 @@
 import { object, string, ref } from "yup";
 
-export const Validation = object().shape({
+export const validation = object().shape({
   name: string().required(),
   email: string().required().email(),
   password: string()

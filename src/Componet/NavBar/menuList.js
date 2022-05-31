@@ -1,5 +1,4 @@
-export const MenuList = [
-
+export const menuList = [
   {
     title: "Login",
     url: "/login",

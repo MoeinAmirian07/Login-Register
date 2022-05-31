@@ -1,10 +1,10 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import { CountrySelector } from "./CountrySelector";
+import { CountrySelector } from "../../Componet/countrySelector";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
-import { Validation } from "./Validation";
+import { validation } from "./validation";
 import { Input } from "../../Componet/Input/Input";
-import { InitialValues } from "./InitialValues";
+import { initialValues } from "./initialValues";
 
 import "./Register.css";
 export const Register = () => {
@@ -19,9 +19,9 @@ export const Register = () => {
         <Layout sectioned={true}>
           <Card sectioned>
             <Formik
-              initialValues={InitialValues}
+              initialValues={initialValues}
               onSubmit={handleSubmit}
-              validationSchema={Validation}
+              validationSchema={validation}
             >
               {() => {
                 return (

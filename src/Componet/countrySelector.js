@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import { Select } from "@shopify/polaris";
 import { useField } from "formik";
-import { Const } from "../../Const";
+import { consts } from "../consts";
 
 export const CountrySelector = ({ name, label, ...props }) => {
-  const [field, meta, helper] = useField(name);
+  const [field, , helper] = useField(name);
   const handleSelectChange = useCallback(
     (value) => {
       helper.setValue(value);
@@ -18,7 +18,7 @@ export const CountrySelector = ({ name, label, ...props }) => {
       <Select
         id={field.name}
         name={field.name}
-        options={Const}
+        options={consts}
         onChange={handleSelectChange}
         value={field.value}
         {...props}

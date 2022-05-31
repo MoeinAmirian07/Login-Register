@@ -1,9 +1,9 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
-import { Validation } from "./Validation";
+import { validation } from "./validation";
 import { Input } from "../../Componet/Input/Input";
-import { InitialValues } from "./InitialValues";
+import { initialValues } from "./initialValues";
 import "./Login.css";
 
 export const Login = () => {
@@ -16,9 +16,9 @@ export const Login = () => {
       <Layout sectioned={true}>
         <Card sectioned>
           <Formik
-            initialValues={InitialValues}
+            initialValues={initialValues}
             onSubmit={handleSubmit}
-            validationSchema={Validation}
+            validationSchema={validation}
           >
             {() => {
               return (
