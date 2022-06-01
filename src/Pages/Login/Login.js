@@ -4,7 +4,7 @@ import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { validation } from "./validation";
 import { Input } from "../../Componet/Input/Input";
 import { initialValues } from "./initialValues";
-import "./Login.css";
+import "./login.css";
 
 export const Login = () => {
   const handleSubmit = (values) => {

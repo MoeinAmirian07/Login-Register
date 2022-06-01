@@ -1,6 +1,6 @@
 import { Card, Layout, Page, Button } from "@shopify/polaris";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./home.css";
 
 export const Home = () => {
   return (

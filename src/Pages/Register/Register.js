@@ -5,8 +5,8 @@ import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { validation } from "./validation";
 import { Input } from "../../Componet/Input/Input";
 import { initialValues } from "./initialValues";
+import "./register.css";
 
-import "./Register.css";
 export const Register = () => {
   const handleSubmit = (values) => {
     alert(JSON.stringify(values, null, 2));
@@ -15,8 +15,8 @@ export const Register = () => {
 
   return (
     <div>
-      <Page title="Register Form" narrowWidth={true}>
-        <Layout sectioned={true}>
+      <Page title="Register Form" narrowWidth>
+        <Layout sectioned>
           <Card sectioned>
             <Formik
               initialValues={initialValues}

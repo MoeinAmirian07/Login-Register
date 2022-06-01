@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { menuList } from "./menuList";
-import "./Navbar.css";
+import "./navbar.css";
 
 export const Navbar = () => {
   const [clicked, setClicked] = useState(false);
