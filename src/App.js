@@ -1,6 +1,7 @@
 import { Login } from "./Pages/Login/Login";
 import { Home } from "./Pages/Home/Home";
 import { Register } from "./Pages/Register/Register";
+import { Doshboard } from "./Componet/Root/Doshboard";
 import { BrowserRouter as Routes, Route } from "react-router-dom";
 import { Navbar } from "./Componet/NavBar/NabBar";
 import { BrowserRouter } from "react-router-dom";
@@ -24,6 +25,9 @@ export const App = () => {
             </Route>
             <Route exact path="/register" element={Register}>
               <Register />
+            </Route>
+            <Route exact path="/doshboard" element={Doshboard}>
+              <Doshboard />
             </Route>
           </Routes>
         </BrowserRouter>
