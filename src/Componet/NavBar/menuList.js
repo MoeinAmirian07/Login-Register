@@ -7,8 +7,5 @@ export const menuList = [
     title: "Register",
     url: "/register",
   },
-  {
-    title: "doshboard",
-    url: "/doshboard",
-  },
+ 
 ];

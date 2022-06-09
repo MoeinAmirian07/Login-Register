@@ -5,10 +5,13 @@ import { validation } from "./validation";
 import { Input } from "../../Componet/Input/Input";
 import { initialValues } from "./initialValues";
 import "./login.css";
+import { useHistory } from "react-router-dom";
 
 export const Login = () => {
-  const handleSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2));
+  const history = useHistory();
+  const switchPage = (values) => {
+    alert(JSON.stringify(values,null, 2));
+    history.push("/doshboard");
   };
 
   return (
@@ -17,7 +20,7 @@ export const Login = () => {
         <Card sectioned>
           <Formik
             initialValues={initialValues}
-            onSubmit={handleSubmit}
+            onSubmit={switchPage}
             validationSchema={validation}
           >
             {() => {
