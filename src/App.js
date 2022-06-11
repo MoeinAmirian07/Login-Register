@@ -9,6 +9,7 @@ import { AppProvider } from "@shopify/polaris";
 import en from "@shopify/polaris/locales/en.json";
 import "@shopify/polaris/build/esm/styles.css";
 import "./App.css";
+import { SpaceX } from "./Componet/SpaceX/SpaceX";
 
 export const App = () => {
   return (
@@ -28,6 +29,9 @@ export const App = () => {
             </Route>
             <Route exact path="/doshboard" element={Doshboard}>
               <Doshboard />
+            </Route>
+            <Route exact path="/spaceX" element={SpaceX}>
+              <SpaceX />
             </Route>
           </Routes>
         </BrowserRouter>

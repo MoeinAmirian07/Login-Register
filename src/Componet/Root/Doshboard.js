@@ -1,6 +1,6 @@
 import React from "react";
 import { Frame, Navigation } from "@shopify/polaris";
-import { HomeMinor, OrdersMinor } from "@shopify/polaris-icons";
+import { HomeMinor, TransportMajor } from "@shopify/polaris-icons";
 
 export const Doshboard = () => {
   return (
@@ -15,10 +15,10 @@ export const Doshboard = () => {
                 icon: HomeMinor,
               },
               {
-                url: "/",
-                label: "Orders",
-                icon: OrdersMinor,
-                badge: "15",
+                url: "/spaceX",
+                label: "spaseX",
+                icon: TransportMajor,
+                badge: "12",
               },
             ]}
           />
