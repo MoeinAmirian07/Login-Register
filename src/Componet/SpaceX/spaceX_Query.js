@@ -6,6 +6,7 @@ export const spaceX_Query = gql`
       image
       id
       name
+      type
     }
   }
 `;

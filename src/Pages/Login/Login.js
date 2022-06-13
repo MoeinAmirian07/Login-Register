@@ -10,13 +10,13 @@ import { useHistory } from "react-router-dom";
 export const Login = () => {
   const history = useHistory();
   const switchPage = (values) => {
-    alert(JSON.stringify(values,null, 2));
+    alert(JSON.stringify(values, null, 2));
     history.push("/doshboard");
   };
 
   return (
     <Page title="Login Form" narrowWidth={true}>
-      <Layout sectioned={true}>
+      <Layout sectioned>
         <Card sectioned>
           <Formik
             initialValues={initialValues}

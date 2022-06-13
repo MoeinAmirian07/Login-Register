@@ -11,7 +11,7 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .container::after {

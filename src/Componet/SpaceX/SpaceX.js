@@ -1,7 +1,8 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { spaceX_Query } from "./spaceX_Query";
-import { MediaCard } from "@shopify/polaris";
+import { MediaCard, Page } from "@shopify/polaris";
+import "./spaceX.css";
 
 export const SpaceX = () => {
   const { loading, error, data } = useQuery(spaceX_Query);
@@ -9,13 +10,21 @@ export const SpaceX = () => {
   if (error) return <p>Error :( </p>;
 
   return (
-    <div>
-      <h1>SpaceX launches</h1>
-      <ul>
-        {data.ships.map((ships) => (
-          <MediaCard title={ships.name} key={ships.id}>
+    <div className="spaceX">
+      <h1>
+        <strong>SpaceX Ships</strong>
+      </h1>
+      {data.ships.map((ships) => (
+        <Page>
+          <MediaCard
+            portrait
+            sectioned
+            title={ships.name}
+            key={ships.id}
+            description={`Type: ${ships.type}`}
+            size="medium"
+          >
             <img
-              overflow="auto"
               alt=""
               width="100%"
               height="100%"
@@ -26,8 +35,8 @@ export const SpaceX = () => {
               src={ships.image}
             />
           </MediaCard>
-        ))}
-      </ul>
+        </Page>
+      ))}
     </div>
   );
 };
