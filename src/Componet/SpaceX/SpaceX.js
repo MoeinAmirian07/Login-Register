@@ -6,21 +6,30 @@ import "./spaceX.css";
 
 export const SpaceX = () => {
   const { loading, error, data } = useQuery(spaceX_Query);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :( </p>;
+  if (loading)
+    return (
+      <p className="paragraph">
+        <strong>loading....</strong>
+      </p>
+    );
+  if (error)
+    return (
+      <p className="paragraph">
+        <strong>{error}</strong>
+      </p>
+    );
 
   return (
     <div className="spaceX">
-      <h1>
+      <h1 className="header">
         <strong>SpaceX Ships</strong>
       </h1>
       {data.ships.map((ships) => (
-        <Page>
+        <Page key={ships.id}>
           <MediaCard
             portrait
             sectioned
             title={ships.name}
-            key={ships.id}
             description={`Type: ${ships.type}`}
             size="medium"
           >

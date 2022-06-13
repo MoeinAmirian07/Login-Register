@@ -15,7 +15,7 @@ export const Login = () => {
   };
 
   return (
-    <Page title="Login Form" narrowWidth={true}>
+    <Page title="Login Form" narrowWidth>
       <Layout sectioned>
         <Card sectioned>
           <Formik
