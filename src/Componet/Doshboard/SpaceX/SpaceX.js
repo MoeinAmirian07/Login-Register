@@ -1,7 +1,14 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { spacexQuery } from "../../../GraphQl/spacexQuery";
-import { MediaCard, Page } from "@shopify/polaris";
+import {
+  Avatar,
+  ResourceItem,
+  ResourceList,
+  TextStyle,
+  Card,
+  Page,
+} from "@shopify/polaris";
 import "./spaceX.css";
 
 export const SpaceX = () => {
@@ -19,33 +26,41 @@ export const SpaceX = () => {
       </p>
     );
 
+  const items = data.ships.map((ship) => {
+    return {
+      id: ship.id,
+      name: ship.name,
+      image: ship.image,
+      type: ship.type,
+    };
+  });
+
+  const renderItem = (item) => {
+    const media = <Avatar size="large" name={item.name} source={item.image} />;
+    return (
+      <ResourceItem verticalAlignment="center" id={item.id} media={media}>
+        <h3>
+          <TextStyle variation="code">{item.name}</TextStyle>
+        </h3>
+        <div>{item.type}</div>
+      </ResourceItem>
+    );
+  };
+
   return (
     <div className="spaceX">
       <h1 className="header">
         <strong>SpaceX Ships</strong>
       </h1>
-      {data.ships.map((ships) => (
-        <Page key={ships.id}>
-          <MediaCard
-            portrait
-            sectioned
-            title={ships.name}
-            description={`Type: ${ships.type}`}
-            size="medium"
-          >
-            <img
-              alt=""
-              width="100%"
-              height="100%"
-              style={{
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-              src={ships.image}
-            />
-          </MediaCard>
-        </Page>
-      ))}
+      <Page key="ships">
+        <Card>
+          <ResourceList
+            resourceName={{ singular: "ship", plural: "ships" }}
+            items={items}
+            renderItem={renderItem}
+          />
+        </Card>
+      </Page>
     </div>
   );
 };
