@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { Select } from "@shopify/polaris";
 import { useField } from "formik";
-import { consts } from "../consts";
+import { consts } from "../../consts";
 
 export const CountrySelector = ({ name, label, ...props }) => {
   const [field, , helper] = useField(name);

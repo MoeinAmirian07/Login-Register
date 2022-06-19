@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const spaceX_Query = gql`
+export const spacexQuery = gql`
   {
     ships(limit: 10) {
       image

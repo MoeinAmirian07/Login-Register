@@ -1,7 +1,7 @@
 import { Login } from "./Pages/Login/Login";
 import { Home } from "./Pages/Home/Home";
 import { Register } from "./Pages/Register/Register";
-import { Doshboard } from "./Componet/Root/Doshboard";
+import { Doshboard } from "./Componet/Doshboard/Doshboard";
 import {
   BrowserRouter as Routes,
   Route,
@@ -12,9 +12,8 @@ import { AppProvider } from "@shopify/polaris";
 import en from "@shopify/polaris/locales/en.json";
 import "@shopify/polaris/build/esm/styles.css";
 import "./App.css";
-import { SpaceX } from "./Componet/SpaceX/SpaceX";
 import { ApolloProvider } from "@apollo/client";
-import { client } from "./Componet/SpaceX/client";
+import { client } from "./GraphQl/client";
 
 export const App = () => {
   return (
@@ -35,9 +34,6 @@ export const App = () => {
               </Route>
               <Route exact path="/doshboard" element={Doshboard}>
                 <Doshboard />
-              </Route>
-              <Route exact path="/spaceX" element={SpaceX}>
-                <SpaceX />
               </Route>
             </Routes>
           </BrowserRouter>

@@ -1,11 +1,11 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { spaceX_Query } from "./spaceX_Query";
+import { spacexQuery } from "../../../GraphQl/spacexQuery";
 import { MediaCard, Page } from "@shopify/polaris";
 import "./spaceX.css";
 
 export const SpaceX = () => {
-  const { loading, error, data } = useQuery(spaceX_Query);
+  const { loading, error, data } = useQuery(spacexQuery);
   if (loading)
     return (
       <p className="paragraph">

@@ -1,6 +1,6 @@
 import React from "react";
 import { Formik, Form } from "formik";
-import { CountrySelector } from "../../Componet/countrySelector";
+import { CountrySelector } from "../../Componet/CountrySelector/countrySelector";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { validation } from "./validation";
 import { Input } from "../../Componet/Input/Input";
