@@ -4,7 +4,7 @@ import { Frame, TopBar } from "@shopify/polaris";
 import { useHistory } from "react-router-dom";
 import { logo } from "./logo";
 import { NavigationDoshboard } from "./NavigationDoshboard";
-import { UserMenuSpaceXicon } from "./userMenuSpaceXicon";
+import { UserMenuSpaceXLogout } from "./UserMenuSpaceXLogout";
 
 export const Doshboard = () => {
   const history = useHistory();
@@ -27,7 +27,7 @@ export const Doshboard = () => {
   const topBarDoshboard = (
     <TopBar
       showNavigationToggle
-      userMenu={<UserMenuSpaceXicon />}
+      userMenu={<UserMenuSpaceXLogout />}
       onNavigationToggle={toggleMobileNavigationActive}
     />
   );
@@ -36,7 +36,7 @@ export const Doshboard = () => {
     <Frame
       logo={logo}
       topBar={topBarDoshboard}
-      navigation={NavigationDoshboard}
+      navigation={<NavigationDoshboard />}
       showMobileNavigation={mobileNavigationActive}
       onNavigationDismiss={toggleMobileNavigationActive}
     >

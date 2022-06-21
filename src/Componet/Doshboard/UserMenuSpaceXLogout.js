@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import { TopBar } from "@shopify/polaris";
 import { useHistory } from "react-router-dom";
 
-export const UserMenuSpaceXicon = () => {
+export const UserMenuSpaceXLogout = () => {
   const history = useHistory();
   const [userMenuActive, setUserMenuActive] = useState(false);
   const toggleUserMenuActive = useCallback(
