@@ -14,7 +14,7 @@ export const Home = () => {
   });
   return (
     <div className="home">
-      <Page narrowWidth={true}>
+      <Page narrowWidth>
         <Layout sectioned>
           <Card title="You have to login or create an account" sectioned>
             <h1>

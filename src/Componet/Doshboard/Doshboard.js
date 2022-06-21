@@ -33,16 +33,14 @@ export const Doshboard = () => {
   );
 
   return (
-    <div style={{ height: "500px" }}>
-      <Frame
-        logo={logo}
-        topBar={topBarDoshboard}
-        navigation={NavigationDoshboard}
-        showMobileNavigation={mobileNavigationActive}
-        onNavigationDismiss={toggleMobileNavigationActive}
-      >
-        <SpaceX />
-      </Frame>
-    </div>
+    <Frame
+      logo={logo}
+      topBar={topBarDoshboard}
+      navigation={NavigationDoshboard}
+      showMobileNavigation={mobileNavigationActive}
+      onNavigationDismiss={toggleMobileNavigationActive}
+    >
+      <SpaceX />
+    </Frame>
   );
 };

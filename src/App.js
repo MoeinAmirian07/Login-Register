@@ -22,11 +22,6 @@ export const App = () => {
           i18n={{
             en,
             Polaris: {
-              Avatar: {
-                label: "Avatar",
-                labelWithInitials: "Avatar with initials {initials}",
-              },
-
               TopBar: {
                 toggleMenuLabel: "Toggle menu",
               },
@@ -34,7 +29,6 @@ export const App = () => {
                 iFrameTitle: "body markup",
               },
               Frame: {
-                skipToContent: "Skip to content",
                 navigationLabel: "Navigation",
                 Navigation: {
                   closeMobileNavigationLabel: "Close navigation",
