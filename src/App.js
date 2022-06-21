@@ -14,27 +14,42 @@ import "@shopify/polaris/build/esm/styles.css";
 import "./App.css";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./GraphQl/client";
-
 export const App = () => {
   return (
     <div className="container">
       <ApolloProvider client={client}>
-        <AppProvider i18n={en}>
+        <AppProvider
+          i18n={{
+            en,
+            Polaris: {
+              Avatar: {
+                label: "Avatar",
+                labelWithInitials: "Avatar with initials {initials}",
+              },
+
+              TopBar: {
+                toggleMenuLabel: "Toggle menu",
+              },
+              Modal: {
+                iFrameTitle: "body markup",
+              },
+              Frame: {
+                skipToContent: "Skip to content",
+                navigationLabel: "Navigation",
+                Navigation: {
+                  closeMobileNavigationLabel: "Close navigation",
+                },
+              },
+            },
+          }}
+        >
           <BrowserRouter>
             <Routes>
               <Navbar />
-              <Route exact path="/" element={Home}>
-                <Home />
-              </Route>
-              <Route exact path="/login" element={Login}>
-                <Login />
-              </Route>
-              <Route exact path="/register" element={Register}>
-                <Register />
-              </Route>
-              <Route exact path="/doshboard" element={Doshboard}>
-                <Doshboard />
-              </Route>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/doshboard" component={Doshboard} />
             </Routes>
           </BrowserRouter>
         </AppProvider>

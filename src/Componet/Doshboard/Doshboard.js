@@ -1,13 +1,20 @@
 import { SpaceX } from "./SpaceX/SpaceX";
-import React, { useState, useCallback } from "react";
-import { Frame, TopBar, AppProvider } from "@shopify/polaris";
-
+import React, { useState, useCallback, useEffect } from "react";
+import { Frame, TopBar } from "@shopify/polaris";
+import { useHistory } from "react-router-dom";
 import { logo } from "./logo";
 import { NavigationDoshboard } from "./NavigationDoshboard";
-import { UserMenuSpaceXicon } from "./SpaceXicon/userMenuSpaceXicon";
+import { UserMenuSpaceXicon } from "./userMenuSpaceXicon";
 
 export const Doshboard = () => {
+  const history = useHistory();
   const [mobileNavigationActive, setMobileNavigationActive] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      history.push("/");
+    }
+  });
 
   const toggleMobileNavigationActive = useCallback(
     () =>
@@ -27,40 +34,15 @@ export const Doshboard = () => {
 
   return (
     <div style={{ height: "500px" }}>
-      <AppProvider
-        i18n={{
-          Polaris: {
-            Avatar: {
-              label: "Avatar",
-              labelWithInitials: "Avatar with initials {initials}",
-            },
-
-            TopBar: {
-              toggleMenuLabel: "Toggle menu",
-            },
-            Modal: {
-              iFrameTitle: "body markup",
-            },
-            Frame: {
-              skipToContent: "Skip to content",
-              navigationLabel: "Navigation",
-              Navigation: {
-                closeMobileNavigationLabel: "Close navigation",
-              },
-            },
-          },
-        }}
+      <Frame
+        logo={logo}
+        topBar={topBarDoshboard}
+        navigation={NavigationDoshboard}
+        showMobileNavigation={mobileNavigationActive}
+        onNavigationDismiss={toggleMobileNavigationActive}
       >
-        <Frame
-          logo={logo}
-          topBar={topBarDoshboard}
-          navigation={NavigationDoshboard}
-          showMobileNavigation={mobileNavigationActive}
-          onNavigationDismiss={toggleMobileNavigationActive}
-        >
-          <SpaceX />
-        </Frame>
-      </AppProvider>
+        <SpaceX />
+      </Frame>
     </div>
   );
 };

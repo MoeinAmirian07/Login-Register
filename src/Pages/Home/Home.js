@@ -1,8 +1,17 @@
+import React, { useEffect } from "react";
 import { Card, Layout, Page, Button } from "@shopify/polaris";
 import { Link } from "react-router-dom";
 import "./home.css";
+import { useHistory } from "react-router-dom";
 
 export const Home = () => {
+  const history = useHistory();
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      history.push("/doshboard");
+    }
+  });
   return (
     <div className="home">
       <Page narrowWidth={true}>

@@ -10,6 +10,7 @@ import { useHistory } from "react-router-dom";
 export const Login = () => {
   const history = useHistory();
   const switchPage = (values) => {
+    localStorage.setItem("token", "*8cdvbJFk!*TVZarKLh");
     alert(JSON.stringify(values, null, 2));
     history.push("/doshboard");
   };

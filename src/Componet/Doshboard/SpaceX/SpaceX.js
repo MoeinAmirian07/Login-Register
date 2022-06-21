@@ -38,9 +38,9 @@ export const SpaceX = () => {
   const renderItem = (item) => {
     const media = <Avatar size="large" name={item.name} source={item.image} />;
     return (
-      <ResourceItem verticalAlignment="center" id={item.id} media={media}>
+      <ResourceItem id={item.id} media={media}>
         <h3>
-          <TextStyle variation="code">{item.name}</TextStyle>
+          <TextStyle variation="strong">{item.name}</TextStyle>
         </h3>
         <div>{item.type}</div>
       </ResourceItem>
