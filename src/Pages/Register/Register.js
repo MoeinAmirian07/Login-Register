@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form } from "formik";
 import { CountrySelector } from "../../Componet/CountrySelector/countrySelector";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
@@ -16,6 +16,12 @@ export const Register = () => {
     history.push("/doshboard");
     values.country = "";
   };
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      history.push("/doshboard");
+    }
+  });
 
   return (
     <div>

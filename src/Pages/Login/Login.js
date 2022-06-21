@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Formik, Form } from "formik";
 import { Card, Button, Page, Layout } from "@shopify/polaris";
 import { validation } from "./validation";
@@ -14,7 +14,12 @@ export const Login = () => {
     alert(JSON.stringify(values, null, 2));
     history.push("/doshboard");
   };
-
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      history.push("/doshboard");
+    }
+  });
   return (
     <Page title="Login Form" narrowWidth>
       <Layout sectioned>
