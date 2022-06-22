@@ -6,6 +6,7 @@ import { Input } from "../../Componet/Input/Input";
 import { initialValues } from "./initialValues";
 import "./login.css";
 import { useHistory } from "react-router-dom";
+import { Navbar } from "../../Componet/NavBar/NabBar";
 
 export const Login = () => {
   const history = useHistory();
@@ -21,30 +22,33 @@ export const Login = () => {
     }
   });
   return (
-    <Page title="Login Form" narrowWidth>
-      <Layout sectioned>
-        <Card sectioned>
-          <Formik
-            initialValues={initialValues}
-            onSubmit={switchPage}
-            validationSchema={validation}
-          >
-            {() => {
-              return (
-                <Form>
-                  <Input name="email" label="Email" />
-                  <Input name="password" label="Password" type="password" />
-                  <div className="submit-btn">
-                    <Button monochrome outline submit>
-                      Login
-                    </Button>
-                  </div>
-                </Form>
-              );
-            }}
-          </Formik>
-        </Card>
-      </Layout>
-    </Page>
+    <div>
+      <Navbar />
+      <Page title="Login Form" narrowWidth>
+        <Layout sectioned>
+          <Card sectioned>
+            <Formik
+              initialValues={initialValues}
+              onSubmit={switchPage}
+              validationSchema={validation}
+            >
+              {() => {
+                return (
+                  <Form>
+                    <Input name="email" label="Email" />
+                    <Input name="password" label="Password" type="password" />
+                    <div className="submit-btn">
+                      <Button monochrome outline submit>
+                        Login
+                      </Button>
+                    </div>
+                  </Form>
+                );
+              }}
+            </Formik>
+          </Card>
+        </Layout>
+      </Page>
+    </div>
   );
 };

@@ -7,6 +7,7 @@ import { Input } from "../../Componet/Input/Input";
 import { initialValues } from "./initialValues";
 import { useHistory } from "react-router-dom";
 import "./register.css";
+import { Navbar } from "../../Componet/NavBar/NabBar";
 
 export const Register = () => {
   const history = useHistory();
@@ -25,6 +26,8 @@ export const Register = () => {
 
   return (
     <div>
+      <Navbar />
+
       <Page title="Register Form" narrowWidth>
         <Layout sectioned>
           <Card sectioned>

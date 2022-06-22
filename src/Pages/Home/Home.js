@@ -3,6 +3,7 @@ import { Card, Layout, Page, Button } from "@shopify/polaris";
 import { Link } from "react-router-dom";
 import "./home.css";
 import { useHistory } from "react-router-dom";
+import { Navbar } from "../../Componet/NavBar/NabBar";
 
 export const Home = () => {
   const history = useHistory();
@@ -13,7 +14,8 @@ export const Home = () => {
     }
   });
   return (
-    <div className="home">
+    <div>
+      <Navbar />
       <Page narrowWidth>
         <Layout sectioned>
           <Card title="You have to login or create an account" sectioned>

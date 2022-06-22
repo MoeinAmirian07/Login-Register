@@ -7,7 +7,6 @@ import {
   Route,
   BrowserRouter,
 } from "react-router-dom";
-import { Navbar } from "./Componet/NavBar/NabBar";
 import { AppProvider } from "@shopify/polaris";
 import en from "@shopify/polaris/locales/en.json";
 import "@shopify/polaris/build/esm/styles.css";
@@ -39,7 +38,6 @@ export const App = () => {
         >
           <BrowserRouter>
             <Routes>
-              <Navbar />
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
